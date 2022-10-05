@@ -23,7 +23,7 @@ try
     read -p 'Seeds name: ' NAME
 
     yarn typeorm migration:create $NAME > /dev/null 2>&1 || throw $ERR_BAD
-    mv *.ts src/infra/database/seeds 
+    mv *.ts src/database/seeds 
 
     echo "Seeds was created successfully!"
 )
