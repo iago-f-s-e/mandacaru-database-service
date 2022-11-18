@@ -10,8 +10,8 @@ import {
 import { BaseEntity } from './base-entity';
 import { Address } from './address';
 import { Subject } from './subject';
-import { UserRoles, UserStatus } from '@src/types/entities';
 import { maxSize } from '@src/constants';
+import { UserRoles, UserStatus } from '@src/types/entities';
 
 @Entity('user')
 @Index('IDX_user_email_status', ['email', 'status'], { unique: true })
@@ -56,7 +56,7 @@ export class User extends BaseEntity {
   public readonly updatedAt!: Date;
 
   @OneToMany(() => Address, address => address.user, { cascade: true })
-  public readonly address!: Address[];
+  public readonly addresses!: Address[];
 
   @OneToMany(() => Subject, subjects => subjects.user)
   public readonly subjects!: Subject[];
