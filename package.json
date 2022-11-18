@@ -6,6 +6,9 @@
   "author": "iago-f-s-e <iago.fagundes@outlook.com>",
   "license": "MIT",
   "scripts": {
+    "run:dev": "yarn env:dev && yarn migration:run && yarn seeds:run",
+    "run:prd": "yarn env:prd && yarn migration:run && yarn seeds:run",
+    "run:stg": "yarn env:stg && yarn migration:run && yarn seeds:run",
     "env:dev": "cp .env.development .env",
     "env:prd": "cp .env.production .env",
     "env:stg": "cp .env.staging .env",
