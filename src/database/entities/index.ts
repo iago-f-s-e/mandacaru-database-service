@@ -10,3 +10,5 @@ export * from './recipe-composition';
 export * from './reference';
 export * from './subject';
 export * from './user';
+export * from './assessment';
+export * from './assessment-meal';

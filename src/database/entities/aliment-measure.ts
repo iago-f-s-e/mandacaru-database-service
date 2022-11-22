@@ -1,5 +1,6 @@
 import { Column, Entity, Index, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from 'typeorm';
 import { Aliment } from './aliment';
+import { AssessmentMeal } from './assessment-meal';
 import { BaseEntity } from './base-entity';
 import { CookingMeasure } from './cooking-measure';
 import { RecipeComposition } from './recipe-composition';
@@ -49,4 +50,7 @@ export class AlimentMeasure extends BaseEntity {
 
   @OneToMany(() => RecipeComposition, recipes => recipes.alimentMeasure)
   public readonly recipes!: RecipeComposition[];
+
+  @OneToMany(() => AssessmentMeal, assessmentMeals => assessmentMeals.alimentMeasure)
+  public readonly assessmentMeals!: AssessmentMeal[];
 }

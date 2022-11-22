@@ -16,6 +16,7 @@ import { Address } from './address';
 import { User } from './user';
 import { maxSize } from '@src/constants';
 import { Genders } from '@src/types/entities';
+import { Assessment } from './assessment';
 
 @Entity('subject')
 @Index('IDX_subject_email_user_id', ['email', 'userId'], { unique: true })
@@ -67,4 +68,7 @@ export class Subject extends BaseEntity {
 
   @OneToMany(() => Address, address => address.subject, { cascade: true })
   public readonly address!: Address[];
+
+  @OneToMany(() => Assessment, assessments => assessments.subject)
+  public readonly assessments!: Assessment[];
 }
