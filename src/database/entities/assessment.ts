@@ -52,6 +52,6 @@ export class Assessment extends BaseEntity {
   @JoinColumn({ name: 'subject_id', referencedColumnName: 'id' })
   public readonly subject!: Subject;
 
-  @OneToMany(() => AssessmentMeal, meals => meals.assessment)
+  @OneToMany(() => AssessmentMeal, meals => meals.assessment, { cascade: true })
   public readonly meals!: AssessmentMeal[];
 }
